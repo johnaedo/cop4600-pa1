@@ -1,0 +1,4 @@
+runfor 15
+use fcfs
+process name A arrival 0 burst 4
+end

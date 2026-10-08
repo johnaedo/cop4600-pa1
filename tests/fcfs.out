@@ -1,0 +1,19 @@
+3 processes
+Using First-Come First-Served
+Time   0 : A arrived
+Time   0 : A selected (burst   4)
+Time   1 : B arrived
+Time   2 : C arrived
+Time   4 : A finished
+Time   4 : B selected (burst   3)
+Time   7 : B finished
+Time   7 : C selected (burst   5)
+Time  12 : C finished
+Time  12 : Idle
+Time  13 : Idle
+Time  14 : Idle
+Finished at time  15
+
+A wait   0 turnaround   4  response 0
+B wait   3 turnaround   6  response 3
+C wait   5 turnaround  10  response 5

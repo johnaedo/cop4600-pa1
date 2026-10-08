@@ -1,0 +1,25 @@
+# docker-compose.yml for PA1: Real-Time Process Scheduling in Rust
+#
+# No per-machine setup is needed: entrypoint.sh matches the container
+# user to whoever owns this directory on the host.
+#
+# `cap_add: SYS_PTRACE` is required for `strace` (used both by students
+# debugging their own code and by autograder.py's syscall check) --
+# Docker's default seccomp profile blocks ptrace-based tracing otherwise.
+# This is a narrower grant than --privileged and doesn't disable other
+# container sandboxing.
+
+services:
+  dev:
+    build: .
+    image: pa1-scheduler:latest
+    volumes:
+      - .:/workspace
+    working_dir: /workspace
+    environment:
+      WORKLOAD_PATH: "./target/debug/workload"
+    cap_add:
+      - SYS_PTRACE
+    stdin_open: true
+    tty: true
+    command: /bin/bash

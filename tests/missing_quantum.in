@@ -1,0 +1,6 @@
+processcount 2
+runfor 10
+use rr
+process name A arrival 0 burst 4
+process name B arrival 1 burst 3
+end
